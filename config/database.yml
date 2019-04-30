@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  primary:
+    <<: *default
+    database: multi_db_bug_development
+  secondary:
+    <<: *default
+    database: multi_db_bug_development
